@@ -1,0 +1,150 @@
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #121212;
+      color: #eeeeee;
+    }
+
+    header {
+      background: #1f1f1f;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #1e1e1e;
+      border-radius: 10px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #444;
+      background-color: #2c2c2c;
+      color: #fff;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #2979ff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .admin-card {
+      display: flex;
+      background: #2a2a2a;
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+    }
+
+    .admin-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      margin-right: 1rem;
+      border-radius: 10px;
+    }
+
+    .admin-actions button {
+      margin-right: 0.5rem;
+      background: #666;
+    }
+
+    .admin-actions button:last-child {
+      background: #d32f2f;
+    }
+
+    #logoutBtn {
+      background-color: #f44336;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      display: none;
+    }
+
+    #toggleThemeBtn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #444;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #searchInput {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.6rem;
+      border: 1px solid #444;
+      border-radius: 5px;
+      background-color: #2c2c2c;
+      color: #fff;
+    }
+
+    body.modo-claro #searchInput {
+      background-color: #fff;
+      color: #000;
+      border-color: #ccc;
+    }
+
+    /* Tema claro */
+    body.modo-claro {
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    body.modo-claro header {
+      background: #1976d2;
+      color: white;
+    }
+
+    body.modo-claro main {
+      background: #ffffff;
+    }
+
+    body.modo-claro input,
+    body.modo-claro select {
+      background: #fff;
+      color: #000;
+      border-color: #ccc;
+    }
+
+    body.modo-claro .admin-card {
+      background: #f0f0f0;
+      color: #000;
+    }
+
+    body.modo-claro a {
+      color: #1976d2;
+    }
+  </style>
+</head>
+
+
+  <footer>
+    <p>&copy; 2025 MelgarGo. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

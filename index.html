@@ -243,6 +243,85 @@
       <div id="adminList"></div>
     </section>
   </main>
+  <body>
+  <header>
+    <h1>MelgarGo - Panel de Administración</h1>
+    <button id="logoutBtn">Cerrar sesión</button>
+    <button id="toggleThemeBtn">🌓 Cambiar modo</button>
+  </header>
+
+  <main>
+    <!-- Login -->
+    <section id="login">
+      <h2>Iniciar Sesión</h2>
+      <form id="loginForm">
+        <label>Email:<input type="email" id="loginEmail" required></label>
+        <label>Contraseña:<input type="password" id="loginPassword" required></label>
+        <button type="submit">Ingresar</button>
+      </form>
+    </section>
+
+    <!-- Panel de administración -->
+    <section id="admin" style="display:none">
+      <h2>Gestión de Categorías</h2>
+      <form id="adminForm">
+        <label>Categoría:
+          <select id="tipo">
+            <option value="fincas">Fincas</option>
+            <option value="domicilios">Domicilios</option>
+            <option value="experiencias">Experiencias</option>
+            <option value="productos">Productos</option>
+          </select>
+        </label>
+        <label>Imagen URL:<input type="text" id="img" required></label>
+        <label>Título:<input type="text" id="title" required></label>
+        <label>Descripción / Precio:<input type="text" id="price" required></label>
+        <label>Link de acción:<input type="url" id="link" required></label>
+        <label>Texto del botón:<input type="text" id="action" required></label>
+        <button type="submit">Guardar</button>
+      </form>
+
+      <!-- Búsqueda -->
+      <input type="text" id="searchInput" placeholder="🔍 Buscar por título o descripción..." />
+
+      <!-- Lista dinámica -->
+      <div id="adminList"></div>
+    </section>
+  </main>
+
+  <!-- Script para cambiar de tema -->
+  <script>
+    const body = document.body;
+    const toggleBtn = document.getElementById('toggleThemeBtn');
+
+    function setTheme(theme) {
+      body.classList.remove("modo-claro", "modo-oscuro");
+      body.classList.add(theme);
+      localStorage.setItem("melgargoTheme", theme);
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      const current = body.classList.contains("modo-claro") ? "modo-claro" : "modo-oscuro";
+      const next = current === "modo-claro" ? "modo-oscuro" : "modo-claro";
+      setTheme(next);
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("melgargoTheme") || "modo-oscuro";
+      setTheme(savedTheme);
+    });
+
+    // Búsqueda en tiempo real
+    document.getElementById("searchInput").addEventListener("input", () => {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".admin-card");
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(query) ? "flex" : "none";
+      });
+    });
+  </script>
 </body>
 </html>
 
